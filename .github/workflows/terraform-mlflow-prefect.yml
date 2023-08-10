@@ -28,7 +28,7 @@ jobs:
       - name: Start MLflow server
         run: |
           mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./mlflow-artifacts --host 0.0.0.0 &
-    
+
       - name: Check if Prefect Server is Running
         run: |
           if pgrep -x "prefect" > /dev/null
@@ -43,7 +43,6 @@ jobs:
       - name: Start Prefect Server
         run: |
           prefect server start
-        background: true  # Run in the background
-
+          
       - name: Run model training
         run: python test.py  # Modify this based on your project structure
