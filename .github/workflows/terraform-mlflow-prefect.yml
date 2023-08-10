@@ -42,7 +42,9 @@ jobs:
           
       - name: Prefect Cloud Login
         run: |
-          prefect cloud login -k ${{ secrets.PREFECT_API_KEY }}
+          prefect cloud login -k ${{ secrets.PREFECT_API_KEY }} --workspace MyWorkspace
+        env:
+          PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
 
       - name: Run model training
         run: python test.py  # Modify this based on your project structure
