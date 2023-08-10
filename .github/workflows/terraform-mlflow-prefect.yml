@@ -15,20 +15,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Set Terraform flag
-      run: echo "USE_TERRAFORM=true" >> $GITHUB_ENV
-
-    - name: Run Terraform (optional)
-      run: |
-        if [ "${{ env.USE_TERRAFORM }}" == "true" ]; then
-          cd ./terraform
-          terraform init
-          terraform apply -auto-approve
-        fi
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         
     - name: Set up Python
       uses: actions/setup-python@v2
