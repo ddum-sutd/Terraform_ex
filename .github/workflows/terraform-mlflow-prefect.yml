@@ -31,10 +31,9 @@ jobs:
 
       - name: Check if Prefect Server is Running
         run: |
-          PREFECT_PID=$(ps aux | grep -v grep | grep "prefect server start" | awk '{print $2}')
-          if [ -n "$PREFECT_PID" ]; then
+          if pgrep -x "prefect" > /dev/null; then
             echo "Stopping Prefect Server..."
-            kill $PREFECT_PID
+            prefect server stop
           fi
 
       - name: Start Prefect Server
