@@ -38,7 +38,7 @@ jobs:
 
       - name: Start Prefect Server
         run: |
-          prefect server start -v DEBUG
+          nohup prefect server start > prefect_server_logs.txt 2>&1 &
           
       - name: Prefect Cloud Login
         run: |
