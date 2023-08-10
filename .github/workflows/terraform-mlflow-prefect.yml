@@ -38,7 +38,7 @@ jobs:
 
       - name: Start Prefect Server
         run: |
-          prefect server start
+          prefect server start -v DEBUG
           
       - name: Prefect Cloud Login
         run: |
