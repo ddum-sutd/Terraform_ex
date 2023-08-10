@@ -7,9 +7,9 @@ def workflow_main():
 if __name__ == "__main__":
 
     # Set MLflow tracking URI
-    mlflow.set_tracking_uri(cfg.mlflow.tracking_uri)
+    mlflow.set_tracking_uri('sqlite:///mlflow.db')
 
     # Set the experiment name from the configuration file
-    mlflow.set_experiment(cfg.mlflow.experiment_name)
+    mlflow.set_experiment('myname')
 
     workflow_main()
