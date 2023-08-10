@@ -5,8 +5,6 @@ def workflow_main():
     print('defined workflow')
 
 if __name__ == "__main__":
-    # Call the load_config to get the configuration object
-    cfg = load_config()
 
     # Set MLflow tracking URI
     mlflow.set_tracking_uri(cfg.mlflow.tracking_uri)
