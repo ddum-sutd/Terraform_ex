@@ -1,4 +1,4 @@
-name: MLOps Workflow without Terraform
+name: MLOps Workflow without Terraform 
 
 on:
   push:
