@@ -46,5 +46,9 @@ jobs:
         env:
           PREFECT_API_KEY: ${{ secrets.PREFECT_API_KEY }}
 
+      - name: Start Docker
+        run: |
+          sudo service docker start
+
       - name: Run model training
         run: python test.py  # Modify this based on your project structure
